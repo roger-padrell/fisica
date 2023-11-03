@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Conversió</title>
+  </head>
+  <body>
+    <b id="n"></b><b id="from"></b> a <b id="to"></b> = <br>
+    <b id="res"></b>
+  </body>
+  <script src="types.js"></script>
+  <script>
+    window.onload = function(){
+      var n = window.location.href.split("?")[1].split("&")[0];
+      var from = window.location.href.split("?")[1].split("&")[1];
+      var to = window.location.href.split("?")[1].split("&")[2];
+
+      document.getElementById("n").innerHTML = n;
+      document.getElementById("from").innerHTML = from;
+      document.getElementById("to").innerHTML = to;
+
+      //convert
+      var nf = n / types[from] * types[to]
+
+      document.getElementById("res").innerHTML = nf;
+    }
+  </script>
+</html>
